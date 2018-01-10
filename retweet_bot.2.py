@@ -19,7 +19,9 @@ def get_tweets(old_id):
 
   with open('drivel.txt', 'w') as file:
     for t in tweets:
-      file.write("Deaw Diawy, %s\n" % t)
+      x = t[:2]
+      if x != 'RT':
+        file.write("Deaw Diawy, %s\n" % t)
 
   with open('drivel.txt', 'r') as drivel, open('diary.txt', 'w') as diary:
     data = drivel.readlines()
@@ -27,6 +29,7 @@ def get_tweets(old_id):
       data = t.replace('r', 'w').replace('R', 'W').replace('[', '').replace(
         ']', '').replace('l', 'w').replace('L', 'W').replace('\'', '')
       data = data[:277]
+      data = re.sub(r"http\S+", "", data)
       diary.write(data)
     data = drivel.readlines()
 
@@ -49,7 +52,7 @@ def loop_it():
 
 old_id = 0
 loop_it()
-
+#get_tweets(old_id)
 
 
 
