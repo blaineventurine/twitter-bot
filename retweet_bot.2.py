@@ -43,31 +43,11 @@ def send_tweet():
       except tweepy.TweepError as e:
         print(e.reason)
 
-
 def loop_it():
   threading.Timer(60, loop_it).start()
   get_tweets(old_id)
   send_tweet()
 
-
 old_id = 0
+
 loop_it()
-#get_tweets(old_id)
-
-
-
-
-# with open('drivel.txt', 'w') as drivel:
-#   for t in drivel:
-#     drivel = [t.replace('r', 'w').replace('R', 'W').replace('[\'', '').replace(
-#       ']', '').replace('l', 'w').replace('L', 'W').replace('\'', '') for t in drivel]
-#   drivel.write(drivel)
-#   #data = re.sub(r"http\S+", "", data)
-
-# with open('diary.txt', 'a+') as diary:
-#   data = diary.readlines()
-#   for line in data:
-#     line = line[:25]
-#     diary.write(line)
-#   #url = re.sub(r"http\S+", "", data)
-#   #diary.write(url)
