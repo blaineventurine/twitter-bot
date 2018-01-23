@@ -5,9 +5,10 @@ and then give it an Elmer Fudd-esque speech impediment.
 
 You'll need to create a credentials.py file, containing:
 
+```python
 key = "enter-your-key-here"
 secret_key = "enter-your-secret-key-here"
 token = "enter-your-token-here"
 secret_token = "enter-your-secret-token here"
-
+```
 those fields.
